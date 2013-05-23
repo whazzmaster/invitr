@@ -1,0 +1,19 @@
+<p>
+Your Name<br/>
+{{view Ember.TextField valueBinding="view.newRsvpName"}}
+<span class="error-explanation">{{nameError}}</span>
+</p>
+
+<p>
+How Many People Are You Bringing?<br/>
+{{view Ember.TextField valueBinding="view.newRsvpAttending"}}
+<span class="error-explanation">{{attendingError}}</span>
+</p>
+
+<p>
+Shout-Outs<br/>
+{{view Ember.TextArea rows="6" cols="34" valueBinding="view.newRsvpMessage"}}<br/>
+<span class="error-explanation">{{messageError}}</span>
+</p>
+
+<input type="submit" value="RSVP" />

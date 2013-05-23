@@ -1,0 +1,9 @@
+<h2>Who's Attending?</h2>
+
+{{controller.totalAttending}} {{controller.attendingDesignator}}
+
+<ul id="rsvps">
+  {{#each rsvp in controller}}
+    {{view Invitr.RsvpView rsvpBinding="rsvp"}}
+  {{/each}}
+</ul>
