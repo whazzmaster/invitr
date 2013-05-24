@@ -78,6 +78,10 @@ ul#rsvps {
     }
     .rsvp-info {
       padding-left: 84px;
+      p.message {
+        font-size: 12pt;
+        line-height: 1em;
+      }
     }
   }
 }

@@ -5,7 +5,7 @@ Invitr.HomeController = Ember.ArrayController.extend Ember.Evented,
   ).property('@each.attending')
 
   attendingDesignator: (->
-    if @get('length') == 1 then 'person' else 'people'
+    if @get('totalAttending') == 1 then 'person' else 'people'
   ).property('@each')
 
   addRsvp: (name, attending, message) ->
@@ -20,7 +20,6 @@ Invitr.HomeController = Ember.ArrayController.extend Ember.Evented,
     if !ownedIds? or ownedIds.indexOf(rsvpId) is -1
       ownedIds.push(rsvpId)
       $.cookie('rsvps', ownedIds)
-
 
   resetErrors: ->
     @set('nameError', '')
@@ -37,14 +36,14 @@ Invitr.HomeController = Ember.ArrayController.extend Ember.Evented,
 
     if Ember.isEmpty(name)
       result.valid = false
-      result.errors.push { field: 'name', message: 'Please enter a name'}
-      @set('nameError', 'Please enter a name')
+      result.errors.push { field: 'name', message: 'Enter a name'}
+      @set('nameError', 'Enter a name')
 
     parsedAttending = parseInt(attending)
     if Ember.isEmpty(attending) or isNaN(parsedAttending) or parsedAttending < 1
       result.valid = false
-      result.errors.push { field: 'attending', message: 'Please enter a number > 0'}
-      @set('attendingError', 'Please enter a number > 0')
+      result.errors.push { field: 'attending', message: 'Enter a number > 0'}
+      @set('attendingError', 'Enter a number > 0')
 
     if !Ember.isEmpty(message) and message.length > 255
       result.valid = false
