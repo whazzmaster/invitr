@@ -4,6 +4,12 @@ $break-small-max: 480px;
 body {
   background: image-url('grass.jpg');
   font-family: 'Varela', sans-serif;
+  font-size: 18pt;
+  line-height: 1.2em;
+}
+
+address {
+  line-height: 1.2em;
 }
 
 #content-container {
@@ -16,12 +22,23 @@ body {
   width: 60%;
   padding: 0;
 
+  p { padding: 5px 0; }
+
   @media only screen
   and (min-device-width: $break-small-min)
   and (max-device-width: $break-small-max) {
     margin: 0;
     border: 0;
     width: 100%;
+    font-size: 16pt;
+  }
+
+  @media screen
+  and (device-aspect-ratio: 40/71) {
+    margin: 0;
+    border: 0;
+    width: 100%;
+    font-size: 16pt;
   }
 
   #content {
@@ -38,11 +55,13 @@ body {
 
 #video-container {
   text-align: center;
+  margin: 10px 0;
 }
 
 ul#rsvps {
   list-style-type: none;
   padding: 0;
+  margin: 0;
   li {
     background: #eee;
     margin-bottom: 10px;
@@ -61,10 +80,6 @@ ul#rsvps {
       padding-left: 84px;
     }
   }
-}
-
-.error-explanation {
-  color: #FF0000;
 }
 
 footer {
