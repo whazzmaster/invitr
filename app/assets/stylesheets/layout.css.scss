@@ -75,12 +75,23 @@ ul#rsvps {
       height: 56px;
       background: image-url('anon.jpg');
       float: left;
+      @media only screen
+      and (min-device-width: $break-small-min)
+      and (max-device-width: $break-small-max) {
+        display: none;
+      }
     }
     .rsvp-info {
-      padding-left: 84px;
+      margin-left: 84px;
+      @media only screen
+      and (min-device-width: $break-small-min)
+      and (max-device-width: $break-small-max) {
+        margin: 0;
+      }
       p.message {
         font-size: 12pt;
         line-height: 1em;
+        overflow: hidden;
       }
     }
   }
